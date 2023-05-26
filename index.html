@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="static/fonts/css/all.css">
+    <link rel="stylesheet" href="static/fonts/css/fontawesome.css">
+    <link rel="stylesheet" href="static/fonts/css/brands.css">
+    <link rel="stylesheet" href="static/fonts/css/solid.css">
+    <link rel="stylesheet" href="static/bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" href="static/style.css">
+    <title>formulario dinamico</title>
+</head>
+<body>
+    <main class="container py-5 main-form-question">
+        <form action="/preferenceValidate" class="form-question border p-4 rounded bg-light" enctype="multipart/form-data" method="post">
+          <input type="hidden" name="total_perguntas" class="total_perguntas">
+          <div class="mb-3">
+              <label for="titulo" class="form-label fw-bold">Título</label>
+              <input type="text" name="titulo" id="titulo" class="form-control" placeholder="titulo" required>
+          </div>
+    
+          <div class="mb-3">
+              <label for="descricao" class="form-label fw-bold">Descrição</label>
+              <textarea name="descricao" id="descricao" class="form-control" placeholder="descricao"></textarea>
+          </div>
+          <div class="input-control w-100 mb-2">
+              <label class="form-label">Validade de Postagem</label>
+              <select name="elemt-number" class="form-select" name="over_time">
+                  <option value="">1d</option>
+                  <option value="">2d</option>
+                  <option value="">3d</option>
+                  <option value="">4d</option>
+                  <option value="">5d</option>
+                  <option value="">6d</option>
+                  <option value="">7d</option>
+                  <option value="">1m</option>
+                  <option value="">2m</option>
+                  <option value="">3m</option>
+              </select>
+          </div>
+    
+            <div id="perguntas-container">
+                <h3 class="fw-bold">Perguntas</h3>
+                <div class="pergunta form-group border rounded p-2">
+                    <label for="pergunta0" class="form-label fw-bold">Pergunta 1</label>
+                    <input type="text" class="form-control" name="pergunta0" id="pergunta0" placeholder="questao" required>
+                    <select class="form-select w-50 mt-2 mb-2 type-question" name="type-question0">
+                    </select>
+                    <div class="input-control w-100 mb-2 container-multichoise d-none">
+                        <select class="form-select w-50 elemt-number" name="elemt-number0">
+                        </select>
+                        <div class="names-container input-control w-100"></div>
+                    </div>
+                    <textarea name="" id="" class="form-control text-answer d-none" placeholder="caixa de resposta" disabled></textarea>
+    
+                    <button type="button" class="remover-pergunta btn btn-danger mt-2"><i class="fa-regular fa-trash-can"></i></button>
+                </div>
+            </div>
+    
+            <button type="button" id="adicionar-pergunta" class="btn btn-primary my-3">+ Adicionar Pergunta</button>
+    
+            <button type="submit" value="Enviar" class="btn btn-primary" disabled>Enviar</button>
+        </form>
+      </main>
+      <script src="static/js/inquerito.js"></script>
+      <script src="static/bootstrap/js/bootstrap.js"></script>
+</body>
+</html>

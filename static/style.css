@@ -1,0 +1,16 @@
+body{
+    background-image: url("media/chart.png");
+    background-repeat: repeat;
+    background-size: 20px 20px;
+    background-color: #3a4d5a;
+}
+html, body {
+    height: 100%;
+  }
+
+.main-form-question {
+  flex: 1;
+  margin: 0 auto;
+  max-width: 800px;
+  padding: 20px;
+}
