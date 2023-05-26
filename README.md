@@ -1,6 +1,6 @@
 # Formulário Dinâmico
 
-**AVISO: Este projeto é apenas para fins de estudo e avaliação de empregadores. Se você deseja utilizar este código em seus próprios projetos, por favor mencione o autor original.**
+**AVISO: Este projecto é apenas para fins de estudo e avaliacção de empregadores. Se você deseja utilizar este código em seus próprios projectos, por favor mencione o autor original.**
 
 Este projecto é um formulário dinâmico que permite aos usuários criar perguntas personalizadas com opções de escolha múltipla ou resposta em texto.
 
@@ -29,7 +29,7 @@ Certifique-se de ter as seguintes dependências instaladas:
 ## Instruções de Uso
 
 1. Faça o download ou clone este repositório.
-2. Certifique-se de incluir os arquivos CSS e JS necessários em seu projeto.
+2. Certifique-se de incluir os arquivos CSS e JS necessários em seu projecto.
 3. Abra o arquivo HTML principal em seu navegador.
 4. Preencha o título, descrição e outras informações necessárias.
 5. Crie perguntas personalizadas usando as opções disponíveis.
@@ -38,7 +38,7 @@ Certifique-se de ter as seguintes dependências instaladas:
 
 ## Imagens
 
-Aqui estão algumas capturas de tela do formulário dinâmico em ação:
+Aqui estão algumas capturas de tela do formulário dinâmico em acção:
 
 ![Tela 1](tela/Capture1.JPG)
 *Formulario sem perguntas*

@@ -267,13 +267,18 @@ document.addEventListener("DOMContentLoaded", function() {
   }
 
   // Remove uma pergunta ao clicar no botão eliminar
-  var container = document.querySelector(".remover-pergunta.btn.btn-danger.mt-2");
+  var container = document.getElementById("perguntas-container");
 
-  container.addEventListener("click", function(event) {
-      event.target.parentNode.remove();
-      contadorPerguntas--;
-      updateQuestionLabels();
-  });
+container.addEventListener("click", function(event) {
+  var removerButton = event.target.closest(".remover-pergunta");
+  if (removerButton) {
+    removerButton.parentNode.remove();
+    contadorPerguntas--;
+    updateQuestionLabels();
+  }
+});
+
+
   
 
 
