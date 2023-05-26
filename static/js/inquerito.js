@@ -1,7 +1,10 @@
-const totalPerguntas = document.querySelectorAll('.pergunta').length;
-document.querySelector('.total_perguntas').value = totalPerguntas;
+const totalPerguntas = document.querySelectorAll('.pergunta').length; // numero total de perguntas
+
+document.querySelector('.total_perguntas').value = totalPerguntas; // Define o valor do campo de input com o total de perguntas
+
 console.log(totalPerguntas);
 
+// funcao para atualizar labels das perguntas
 function updateQuestionLabels() {
   const questions = document.querySelectorAll('.pergunta');
   questions.forEach((question, index) => {
@@ -46,6 +49,7 @@ function updateQuestionLabels() {
   });
 }
 
+// funcao para preencher as opcoes do tipo de pergunta
 function typeQuestion(typeQuestionV){
   contentText = ['escolha multipla','texto'];
   for(let i = 0; i < 2; i++){
@@ -56,6 +60,7 @@ function typeQuestion(typeQuestionV){
   }
 }
 
+// funcao para obter o tipo de pergunta selecionado e atualizar os campos
 function getSelectedTypeQuestion(getSelectedTypeQuestionV,containerMultichoise,textarea){
     contentText = ['escolha multipla','texto'];
         if(getSelectedTypeQuestionV.value === contentText[1]){
@@ -72,6 +77,8 @@ function getSelectedTypeQuestion(getSelectedTypeQuestionV,containerMultichoise,t
             }
         }
 }
+
+// funcao para adicionar opcoes ao elemento select
 function addOptionToSelect(selectElement) {
   for (let i = 2; i <= 10; i++) {
     const option = document.createElement('option');
@@ -81,6 +88,7 @@ function addOptionToSelect(selectElement) {
   }
 }
 
+// funcao para adicionar campos de nome nas opcoes
 function addNameInputs(namesContainer, numNames, k) {
   namesContainer.innerHTML = '';
   for (let i = 1; i <= numNames; i++) {
@@ -144,7 +152,7 @@ function addNameInputs(namesContainer, numNames, k) {
       namesContainer.appendChild(inputControl);
   }
 }
-
+// funcao para adicionar uma nova pergunta
 function addNewQuestion(contadorPerguntas) {
   var novaPergunta = document.createElement("div");
   novaPergunta.className = "pergunta form-group border rounded p-2 mt-2";
@@ -202,7 +210,7 @@ function addNewQuestion(contadorPerguntas) {
 
   document.getElementById("perguntas-container").appendChild(novaPergunta);
 
-  // Adiciona os listeners de evento para os novos elementos
+  //  evento de mudanca para os novos elementos
   elemtNumber.addEventListener('change', function() {
     addNameInputs(namesContainer, elemtNumber.value, contadorPerguntas);
   });
@@ -220,16 +228,16 @@ function addNewQuestion(contadorPerguntas) {
 }
 
 document.addEventListener("DOMContentLoaded", function() {
-  // Inicializa o contador de perguntas
+  // inicializa o contador de perguntas
   var contadorPerguntas = 1;
 
-  // Adiciona uma nova pergunta ao clicar no botão "Adicionar Pergunta"
+  // adiciona uma nova pergunta ao clicar no botão "Adicionar Pergunta"
   document.getElementById("adicionar-pergunta").addEventListener("click", function() {
     addNewQuestion(contadorPerguntas);
     contadorPerguntas++;
   });
 
-  // Adiciona os listeners de evento para os elementos originais
+  // adiciona os listeners de evento para os elementos originais
   const selectElement = document.querySelectorAll('.elemt-number');
   const namesContainer = document.querySelectorAll('.names-container');
   const typeQuestionV = document.querySelectorAll('.type-question');
@@ -258,7 +266,7 @@ document.addEventListener("DOMContentLoaded", function() {
       addNameInputs(namesContainer[j], selectElement[j].value, j);
   }
 
-  // Remove uma pergunta ao clicar no botão "-"
+  // Remove uma pergunta ao clicar no botão eliminar
   var container = document.querySelector(".remover-pergunta.btn.btn-danger.mt-2");
 
   container.addEventListener("click", function(event) {
